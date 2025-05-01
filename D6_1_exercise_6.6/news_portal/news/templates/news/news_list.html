@@ -1,0 +1,16 @@
+{% extends 'news/default.html' %}
+
+{% load censor %}
+
+{% block content %}
+  <h1>Новости</h1>
+  <ul>
+    {% for post in news %}
+      <li>
+        <a href="{% url 'news_detail' post.id %}">{{ post.title|censor }}</a><br>
+        <small>{{ post.date_posted|date:"d.m.Y" }}</small><br>
+        <p>{{ post.text|censor|truncatechars:20 }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

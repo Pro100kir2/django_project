@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Новостной портал</title>
+</head>
+<body>
+    <header>
+        <h1>Портал новостей</h1>
+        <nav>
+            <a href="/news/">Все новости</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; {{ now|date:"Y" }}</p>
+    </footer>
+</body>
+</html>
